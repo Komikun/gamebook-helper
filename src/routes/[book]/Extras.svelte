@@ -31,7 +31,6 @@
 				}
 			});
 		});
-		console.log(map);
 		return result;
 	});
 	let unvisited = $derived.by(() => {
@@ -67,7 +66,7 @@
 	{/if}
 	{#if section === 'extras'}
 		<h2 class="text-2xl">Extras</h2>
-		<div class="m-2" style="height: 80vh">
+		<div class="m-2 overflow-y-scroll" style="height: 80vh">
 			<ul>
 				{#each data.book.pages.filter((p) => p.extra.length > 0) as page}
 					<li class="flex place-items-center justify-between gap-2">
@@ -85,7 +84,7 @@
 	{/if}
 	{#if section === 'unvisited'}
 		<h2 class="text-2xl">Unvisited</h2>
-		<div class="m-2" style="height: 80vh">
+		<div class="m-2 overflow-y-scroll" style="height: 80vh">
 			<ul>
 				{#each unvisited as page}
 					<li>{page}</li>
